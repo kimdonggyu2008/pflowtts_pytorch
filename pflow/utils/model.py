@@ -5,6 +5,7 @@ import torch
 
 
 def sequence_mask(length, max_length=None):
+    print(length)
     #if max_length is None:
     for leng in length:
         print(leng)
