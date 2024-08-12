@@ -10,6 +10,7 @@ def sequence_mask(length, max_length=None):
     #for leng in length:
     #    print(leng)
     print("시퀀스 마스크 length 모양: ",length.shape)
+    print("첫번째 length값: ",length[0])
 
     #for i in range(32):
     #    print(length[i])
