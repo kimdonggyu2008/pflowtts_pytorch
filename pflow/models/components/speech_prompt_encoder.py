@@ -568,6 +568,8 @@ class TextEncoder(nn.Module):
  
         x_emb = self.emb(x_input) * math.sqrt(self.n_channels)
         x_emb = torch.transpose(x_emb, 2, 1)
+
+        print(x_emb.shape)
         x_emb_mask = torch.unsqueeze(sequence_mask(x_lengths, x_emb.size(2)), 1).to(x_emb.dtype)
         x_emb = self.text_pos_emb(x_emb.unsqueeze(1).transpose(-2,-1)).squeeze(1).transpose(-2,-1)
         x_emb = self.text_base_encoder(x_emb, x_emb_mask)
