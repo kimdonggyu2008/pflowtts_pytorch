@@ -11,7 +11,12 @@ def sequence_mask(length, max_length=None):
     #    print(leng)
     for _ in range(10):
         print()
-    print(length.shape)
+    
+    for i in range(32):
+        print(length[i])
+        
+    for _ in range(10):
+        print()   
     max_length = length.max()
     #max_length=max(length)
     #max_length=[279,0,0]
