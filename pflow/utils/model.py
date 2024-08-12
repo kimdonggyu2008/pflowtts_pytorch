@@ -8,8 +8,8 @@ def sequence_mask(length, max_length=None):
     #if max_length is None:
     for leng in length:
         print(leng)
-    max_length = length.max()
-    
+    #max_length = length.max()
+    max_length=max(length)
     x = torch.arange(max_length, dtype=length.dtype, device=length.device)
     return x.unsqueeze(0) < length.unsqueeze(1)
 
