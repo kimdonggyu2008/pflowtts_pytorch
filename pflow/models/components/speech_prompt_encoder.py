@@ -565,16 +565,19 @@ class TextEncoder(nn.Module):
             x_mask (torch.Tensor): mask for the text input
                 shape: (batch_size, 1, max_text_length)
         """
- 
-        x_emb = self.emb(x_input) * math.sqrt(self.n_channels)
-        x_emb = torch.transpose(x_emb, 2, 1)
-
         for _ in range(10):
             print()
-        print(x_emb.shape)
+        x_emb = self.emb(x_input) * math.sqrt(self.n_channels)
+        print("첫번째 x_emb 모양: ",x_emb.shape)
+                
+        x_emb = torch.transpose(x_emb, 2, 1)
+        print("두번째 x_emb 모양: ",x_emb.shape)
+
+        print("x_length 형태: ",x_lengths.shape)
 
             
         x_emb_mask = torch.unsqueeze(sequence_mask(x_lengths, x_emb.size(2)), 1).to(x_emb.dtype)
+        #마스크는 x_length의 [최고길이,]로 남음
         x_emb = self.text_pos_emb(x_emb.unsqueeze(1).transpose(-2,-1)).squeeze(1).transpose(-2,-1)
         x_emb = self.text_base_encoder(x_emb, x_emb_mask)
 
