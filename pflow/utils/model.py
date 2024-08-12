@@ -9,6 +9,8 @@ def sequence_mask(length, max_length=None):
     #if max_length is None:
     #for leng in length:
     #    print(leng)
+    print("지금 실행중")
+    print(length.shape)
     max_length = length.max()
     #max_length=max(length)
     #max_length=[279,0,0]
