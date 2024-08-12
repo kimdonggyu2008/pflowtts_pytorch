@@ -9,10 +9,8 @@ def sequence_mask(length, max_length=None):
     #if max_length is None:
     #for leng in length:
     #    print(leng)
-    for _ in range(10):
-        print()
+    print("시퀀스 마스크 length 모양: ",length.shape)
 
-    print(length.dtype)
     #for i in range(32):
     #    print(length[i])
         
