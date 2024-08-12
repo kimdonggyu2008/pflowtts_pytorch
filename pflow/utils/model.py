@@ -11,8 +11,9 @@ def sequence_mask(length, max_length=None):
     #    print(leng)
     print("시퀀스 마스크 length 모양: ",length.shape)
     print("length 사이즈: ",length.size())
-    length_cpu=length.cpu()
-    print("첫번째 length값: ",length_cpu[0])
+    print("length[0][0][0]: ",length[0][0][0])
+    #length_cpu=length.cpu()
+    #print("첫번째 length값: ",length_cpu[0])
 
     #for i in range(32):
     #    print(length[i])
