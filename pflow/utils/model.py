@@ -5,13 +5,13 @@ import torch
 
 
 def sequence_mask(length, max_length=None):
-    print(length)
+    #print(length)
     #if max_length is None:
-    for leng in length:
-        print(leng)
-    #max_length = length.max()
+    #for leng in length:
+    #    print(leng)
+    max_length = length.max()
     #max_length=max(length)
-    max_length=[279,0,0]
+    #max_length=[279,0,0]
     x = torch.arange(max_length, dtype=length.dtype, device=length.device)
     return x.unsqueeze(0) < length.unsqueeze(1)
 
