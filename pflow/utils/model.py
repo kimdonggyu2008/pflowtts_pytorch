@@ -11,9 +11,10 @@ def sequence_mask(length, max_length=None):
     #    print(leng)
     for _ in range(10):
         print()
-    
-    for i in range(32):
-        print(length[i])
+
+    print(length.dtype)
+    #for i in range(32):
+    #    print(length[i])
         
     for _ in range(10):
         print()   
