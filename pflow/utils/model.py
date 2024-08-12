@@ -12,17 +12,9 @@ def sequence_mask(length, max_length=None):
     print("시퀀스 마스크 length 모양: ",length.shape)
     print("length 사이즈: ",length.size())
     print("length: ",length.tolist().item())
-    #length_cpu=length.cpu()
-    #print("첫번째 length값: ",length_cpu[0])
-
-    #for i in range(32):
-    #    print(length[i])
-        
     for _ in range(10):
         print()   
     max_length = length.max()
-    #max_length=max(length)
-    #max_length=[279,0,0]
     x = torch.arange(max_length, dtype=length.dtype, device=length.device)
     return x.unsqueeze(0) < length.unsqueeze(1)
 
