@@ -11,7 +11,8 @@ def sequence_mask(length, max_length=None):
     #    print(leng)
     print("시퀀스 마스크 length 모양: ",length.shape)
     print("length 사이즈: ",length.size())
-    print("length: ",length.tolist().item())
+    print("length dtype: ",length.dtype)
+    print("length type: ",length.type())
     for _ in range(10):
         print()   
     max_length = length.max()
