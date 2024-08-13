@@ -567,6 +567,7 @@ class TextEncoder(nn.Module):
         """
         for _ in range(10):
             print()
+        print("시작전")
         x_emb = self.emb(x_input) * math.sqrt(self.n_channels)
         print("첫번째 x_emb 모양: ",x_emb.shape)
                 
