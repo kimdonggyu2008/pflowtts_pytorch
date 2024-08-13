@@ -574,6 +574,8 @@ class TextEncoder(nn.Module):
         print("두번째 x_emb 모양: ",x_emb.shape)
 
         print("x_length 형태: ",x_lengths.shape)
+        print("x_length dtype: ",x_lengths.dtype)
+        print("x_length type: ",x_lengths.type())
 
             
         x_emb_mask = torch.unsqueeze(sequence_mask(x_lengths, x_emb.size(2)), 1).to(x_emb.dtype)
