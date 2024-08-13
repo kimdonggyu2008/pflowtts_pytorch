@@ -576,7 +576,10 @@ class TextEncoder(nn.Module):
 
         print("x_length 형태: ",x_lengths.shape)
         print("x_length dtype: ",x_lengths.dtype)
-        print("x_length type: ",type(x_length))
+        if isinstance(x_length,torch.Tensor):
+            print("x_length type: 텐서임")
+        else:
+            print("x_length type: 텐서아님")
 
             
         x_emb_mask = torch.unsqueeze(sequence_mask(x_lengths, x_emb.size(2)), 1).to(x_emb.dtype)
