@@ -9,10 +9,14 @@ def sequence_mask(length, max_length=None):
     #if max_length is None:
     #for leng in length:
     #    print(leng)
+    print()
     print("시퀀스 마스크 length 모양: ",length.shape)
     print("length 사이즈: ",length.size())
     print("length dtype: ",length.dtype)
-    print("length type: ",type(length))
+    if isinstance(length,torch.Tensor):
+            print("length type: 텐서임")
+        else:
+            print("length type: 텐서아님")
     for _ in range(10):
         print()   
     max_length = length.max()
